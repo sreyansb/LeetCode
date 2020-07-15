@@ -1,6 +1,7 @@
 #for every hour->30 degrees used.
 #for every minute->6 degrees used.
 #for every 12 minutes->hour hand moves by 12 degrees
+# we need to return minimum of the angles
 class Solution:
     def angleClock(self, hour: int, minutes: int) -> float:
         if hour==12:

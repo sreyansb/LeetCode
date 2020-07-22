@@ -24,7 +24,7 @@ class Solution:
                 if le==0:
                     k.append(nw)
                 else:
-                    k.append(nw[::-1])
+                    k.append(nw[::-1])#nw.reverse() is slower
                 cur=nextl
                 le^=1
             return k

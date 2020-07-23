@@ -13,13 +13,17 @@ class Solution:
 
 
 """
-#2nd attempt->faster
+#2nd attempt->faster but many violations of requirements
 class Solution:
     def singleNumber(self, nums: List[int]) -> List[int]:
-        a=0
+        l=[]
+        nums.sort()
         for i in nums:
-            a^=i
-        for j in bin
+            if l and l[-1]==i:
+                l.pop()
+            else:
+                l.append(i)
+        return l
 """            
         
 

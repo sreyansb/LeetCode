@@ -1,6 +1,7 @@
 #ACCEPTED:
 def wordie(s,worddict,memo,answer):
     #print(s,memo)
+    #print(s,memo)
     if s=="":
         return ['']  
     if s in memo:
@@ -8,9 +9,11 @@ def wordie(s,worddict,memo,answer):
     res=[]
     for i in range(1,len(s)+1):
         if s[:i] in worddict:
-            for j in wordie(s[i:],worddict,memo,answer):
-               res.append((s[:i] + " " + j).strip())       
+            k=wordie(s[i:],worddict,memo,answer)
+            print(k)
+            res.append((s[:i] + " " + k[0]).strip())       
     memo[s]=res
+    #print(s,memo[s])
     return memo[s]
         
 class Solution:
@@ -48,8 +51,8 @@ class Solution:
         return list(answers)
 """
 obj=Solution()
-print(obj.wordBreak("aaaaaaa",["aaaa","aa","a"]))
-#print(obj.wordBreak("pineapplepenapple",\
-#                    ["apple", "pen", "applepen", "pine", "pineapple"]))
+#print(obj.wordBreak("aaaaaaa",["aaaa","aa","a"]))
+print(obj.wordBreak("pineapplepenapple",\
+                    ["apple", "pen", "applepen", "pine", "pineapple"]))
 #print(obj.wordBreak("catsanddog",["cat", "cats", "and", "sand", "dog"]))
 #print(obj.wordBreak("catsandog",["cat", "cats", "and", "sand", "dog"]))

@@ -1,4 +1,4 @@
-#solved using f(n)=f(n-1)+f(n-2) and then solveing the recursive function
+#solved using f(n)=f(n-1)+f(n-2) and then solving the recursive function
 class Solution:
     def climbStairs(self, n):
         if n==1:

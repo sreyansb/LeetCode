@@ -6,8 +6,8 @@ class Solution:
         x=5**0.5
         a1=2/(x*(x-1))
         a2=2*(x-2)/(3*x-5)
-        for i in range(1,46):
-            print((a1*((1+x)/2)**i) + (a2*((1-x)/2)**i))
+        #for i in range(1,46):
+        #    print((a1*((1+x)/2)**i) + (a2*((1-x)/2)**i))
         return int((a1*((1+x)/2)**n) + (a2*((1-x)/2)**n))
 obj=Solution()
 print(obj.climbStairs(1))

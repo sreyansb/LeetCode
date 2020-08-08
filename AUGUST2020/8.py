@@ -1,3 +1,4 @@
+#TOOK HELP
 # Definition for a binary tree node.
 class TreeNode:
      def __init__(self, val=0, left=None, right=None):
@@ -22,7 +23,41 @@ class Solution:
         ans=[0]
         helper(root,sum,ans,[])
         return ans[0]
+"""
+#MY CODE-> didn't tink it was this simple
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+def helper(root,initsum,sum,ans,visited):
+    if root:
+        if root.val<sum:
+            visited.append(root.val)
+            helper(root.left,initsum,sum-root.val,ans,visited)
+            helper(root.right,initsum,sum-root.val,ans,visited)
+            visited.pop()
+            helper(root.left,initsum,sum,ans,visited)
+            helper(root.right,initsum,sum,ans,visited)
+        elif root.val==sum:
+            visited.append(root.val)
+            ans.append(visited)
+            visited=[]
+            helper(root.left,initsum,initsum,ans,visited)
+            helper(root.right,initsum,initsum,ans,visited)
+        else:
+            visited=[]
+            helper(root.left,initsum,initsum,ans,visited)
+            helper(root.right,initsum,initsum,ans,visited)
+            
 
+class Solution:
+    def pathSum(self, root: TreeNode, sum: int) -> int:
+        ans=[]
+        helper(root,sum,sum,ans,[])
+        return len(ans)
+"""
 obj=Solution()
 root=TreeNode()
 root.val=-2

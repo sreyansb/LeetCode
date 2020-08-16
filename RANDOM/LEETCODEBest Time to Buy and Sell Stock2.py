@@ -1,4 +1,3 @@
-from math import inf
 class Solution:
     def maxProfit(self, a: List[int]) -> int:
         n=len(a)

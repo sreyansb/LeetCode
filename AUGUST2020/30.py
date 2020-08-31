@@ -1,6 +1,5 @@
 #attempt 4: had to take help
 #used union-find structures
-import collections
 class Solution:
     def largestComponentSize(self, A: List[int]) -> int:
         

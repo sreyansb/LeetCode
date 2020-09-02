@@ -5,7 +5,7 @@
 #We only need to store the most recent value of a bucket.
 #the differences might be in same bucket or just +,- 1 buckets.
 #check the values and solve.
-
+#ATTEMPT-3
 class Solution:
     def containsNearbyAlmostDuplicate(self, nums: List[int], k: int, t: int) -> bool:
         n=len(nums)
@@ -27,3 +27,33 @@ class Solution:
                 del di[nums[index-k]//width]
             index+=1
         return False
+
+#ATTEMPT-2
+"""
+class Solution:
+    def containsNearbyAlmostDuplicate(self, nums: List[int], k: int, t: int) -> bool:
+        n=len(nums)
+        for i in range(n):
+            l=nums[i+1:min(n,i+k+1)]
+            l.sort()
+            for j in l:
+                if abs(nums[i]-j)<=t:
+                    return True
+        return False
+"""
+
+#ATTEMPT-1
+"""
+class Solution:
+    def containsNearbyAlmostDuplicate(self, nums: List[int], k: int, t: int) -> bool:
+        n=len(nums)
+        for i in range(n):
+            l=nums[i+1:min(n,i+k+1)]
+            l.sort()
+            for j in l:
+                if abs(nums[i]-j)<=t:
+                    return True
+        return False
+"""
+
+

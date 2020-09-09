@@ -1,3 +1,5 @@
+import numpy as np
+import time
 class Solution:
     def solveSudoku(self, board):
         empty=[]
@@ -58,9 +60,11 @@ class Solution:
             if board[empty[index][0]][empty[index][1]]=="." or board[empty[index][0]][empty[index][1]]=="10":
                 index-=1
             else:
-                index+=1
-        print(board)
-                
+                index+=1    
+            print(np.array(board))
+            print()
+            time.sleep(0.1)
+              
 obj=Solution()
 obj.solveSudoku([["5","3",".",".","7",".",".",".","."],\
                  ["6",".",".","1","9","5",".",".","."],\

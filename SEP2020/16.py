@@ -15,6 +15,7 @@ class Solution:
                 se.add(j&mask)
             for j in se:
                 if j^newmax in se:
+                    print("yes  ",j,j^newmax)
                     maxi=newmax
                     break
             print("max",maxi)

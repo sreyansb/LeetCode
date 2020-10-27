@@ -1,24 +1,53 @@
-#Attempt1: took a clue. We have to fill the first with poured ml of liquid
-#and then divide further
-#complicated for no reason
-#dpt[i][j] represents the volume of liquid in each that has poured since the
-#beginning of the process
+#attempt2: SLow and fast pointer
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
 class Solution:
-    def champagneTower(self, poured: int, query_row: int, query_glass: int) -> float:
-        if poured==0 or query_glass>query_row:
-            return 0
-        if poured==1:
-            if query_row==0:
-                return 1
-            else:
-                return 0
-        dpt=[[0 for i in range(101)] for j in range(101)]
-        dpt[0][0]=poured
-        for row in range(1,101):
-            dpt[row][0]=(max(0,dpt[row-1][0]-1))/2
-            dpt[row][row]=(max(0,dpt[row-1][row-1]-1))/2
-            for col in range(1,row):
-                dpt[row][col]=(max(0,dpt[row-1][col]-1)+max(0,dpt[row-1][col-1]-1))/2
-        return min(1,dpt[query_row][query_glass])
+    def detectCycle(self, head: ListNode) -> ListNode:
+        if not(head) or head==head.next:
+            return head
+        slow=head
+        fast=head
+        number=1
+        #ends at the tail or the element before the tail, cant say
+        while(slow and fast and fast.next):
+            
+            #print(slow.val,fast.val)
+            if slow==fast and number==0:
+                #print(slow.val)
+                break
+            number=0
+            parent=slow
+            slow=slow.next
+            fast=fast.next.next
+        if slow!=fast or number:
+            return None
+        #this will take us to the closest element in the list
+        while(head!=fast):
+            head=head.next
+            fast=fast.next
+        return head
             
         
+
+#attempt1: 84%
+"""
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def detectCycle(self, head: ListNode) -> ListNode:
+        s=set()
+        while(head):
+            if head in s:
+                return head
+            s.add(head)
+            head=head.next
+        return None
+"""

@@ -1,4 +1,22 @@
+#attempt2: Took a clue -> the number of different lengths ==2
+class Solution:
+    def validSquare(self, p1: List[int], p2: List[int], p3: List[int], p4: List[int]) -> bool:
+        def dist(p1,p2):
+            return (p1[0]-p2[0])**2+(p2[1]-p1[1])**2
+        sets=set()
+        sets.add(dist(p1,p2))
+        sets.add(dist(p2,p3))
+        sets.add(dist(p1,p3))
+        sets.add(dist(p1,p4))
+        sets.add(dist(p2,p4))
+        sets.add(dist(p3,p4))
+        if len(sets)==2 and 0 not in sets:
+            return True
+        return False
+
+
 #attempt1: VERY DIFFICULT, GOT 5 WAs
+"""
 from math import inf,atan,pi,floor
 class Solution:
     def validSquare(self, p1: List[int], p2: List[int], p3: List[int], p4: List[int]) -> bool:
@@ -64,4 +82,4 @@ class Solution:
             return False
         else:
             return False
-        
+"""    

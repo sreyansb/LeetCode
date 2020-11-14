@@ -1,3 +1,5 @@
+#attempt1: MAde a formula but wrong assumptions
+#took help from channa sir
 class Solution:
     def poorPigs(self, buckets, minutesToDie, minutesToTest):
         a=minutesToTest//minutesToDie+1

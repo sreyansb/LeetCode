@@ -8,7 +8,7 @@ class Solution:
             if index==n+1:
                 ans[0]+=1
                 #print(ans)
-            for i in range(1,n+1):#for index i put all possible values and
+            for i in range(1,n+1):#for index 'index' put all possible values and
                 #do stuff for index+1
                 if visited[i]==0 and (i%index==0 or index%i==0):
                     visited[i]=1

@@ -1,3 +1,5 @@
+#done a lot of time before
+
 #attempt1:
 class Solution:
     def simplifyPath(self, path: str) -> str:

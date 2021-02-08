@@ -1,6 +1,6 @@
 #attempt1:
 class Solution:
-    def shortestToChar(self, s: str, c: str) -> List[int]:
+    def shortestToChar(self, s, c):
         lefi=rigi=float('inf')
         n=len(s)
         leftd=[lefi]*n
@@ -16,5 +16,6 @@ class Solution:
             rightd[i]=rigi
             rigi+=1
         return [min(leftd[i],rightd[i]) for i in range(n)]
-        
-        
+
+obj=Solution()
+print(obj.shortestToChar("aaab","b"))

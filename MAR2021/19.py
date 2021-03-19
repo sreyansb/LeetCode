@@ -1,4 +1,5 @@
-#attempt1:
+#attempt1: Very fast
+
 class Solution:
     def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
         visited=set()

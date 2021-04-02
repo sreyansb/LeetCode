@@ -1,3 +1,21 @@
+#attempt4:TOOK HELP DP
+class Solution:
+    def findMaxForm(self, strs: List[str], m: int, n: int) -> int:
+        dp={}
+        strs=[(x.count('0'),x.count('1')) for x in strs]
+        n1=len(strs)
+        def dpc(mleft,nleft,pairs):
+            if mleft<0 or nleft<0:
+                return -1
+            if pairs==n1:
+                return 0
+            if (mleft,nleft,pairs) in dp:
+                return dp[mleft,nleft,pairs]
+            dp[(mleft,nleft,pairs)]=max(1+dpc(mleft-strs[pairs][0],nleft-strs[pairs][1],pairs+1),dpc(mleft,nleft,pairs+1))
+            return dp[(mleft,nleft,pairs)]
+        return dpc(m,n,0)
+
+
 #attempt3: Very important to sort using both based on 0 and 1
 from heapq import heappush,heappop
 class Solution:

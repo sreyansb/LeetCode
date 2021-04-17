@@ -1,4 +1,5 @@
 #attempt1: TOOK HELP
+#very important must do before
 #prefix 2d sum is used here. Calculate column wise sum
 #between 2 rows(r1 and r2) and then apply similarly as 1d sum
 #remember it is sumtillhere-target and not other way round

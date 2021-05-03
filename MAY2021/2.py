@@ -1,10 +1,12 @@
 #attempt4:TOOK HELP
+
 #max heap for durations (taken now) is implemented
 #push current element to heap, check if the deadline condition is satisfied
 #till now, if not remove top most element from the heap.
 #DOUBT CLARIFICATION: at a certain point where the above condition of deadline
-#isn't satisfied and heap part removal of duration
-#
+#isn't satisfied and heap part removal of highest duration
+#doesn't guarantee deadline meeting but it will be cleared in the next iteration
+
 
 from heapq import heappush,heappop
 class Solution:

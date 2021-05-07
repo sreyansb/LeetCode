@@ -1,3 +1,4 @@
+'''
 #attempt3: 80%->lattice problem
 class Solution:
     def mirrorReflection(self, p, q):
@@ -12,7 +13,32 @@ class Solution:
         else:
             if q%2:
                 return 2
+'''
+from math import floor,ceil
+class Solution:
+    def mirrorReflection(self, p, q):
+        points=[(p,0),(p,p),(0,p)]
+        curh=q
+        remh=p-curh
+        curw,up,k=p,1,q/p
+        while (curw,curh) not in points:
+            print(curw,curh,remh)
+            if remh>=q:
+                curw=0 if curw==p else p
+                curh+=up*q
+                remh-=q
+            else:
+                curw=0 if curw==p else p
+                up*=-1
+                curh=p-q+remh
+                remh=p-q+remh
+                curw=floor(curw) if curw-floor(curw)<ceil(curw)-curw else ceil(curw)
+                curh=floor(curh) if curh-floor(curh)<ceil(curh)-curh else ceil(curh)
+                remh=floor(curh) if remh-floor(remh)<ceil(remh)-remh else ceil(remh)
+        return points.index((curw,curh))
 
+obj=Solution()
+obj.mirrorReflection(4,3)
 #attempt2: 20%
 '''
 from math import floor,ceil

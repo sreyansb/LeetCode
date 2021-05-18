@@ -22,6 +22,31 @@ class Solution:
                     dp[i][j]=dp[i-1][j-nums[i]]
         return dp[n-1][k]
 
+#attempt n: DURING REVISION: TLE it seems like a problem of finding if a sum (sum//2) can be attained by using some elements of the array
+'''
+class Solution:
+    def canPartition(self, nums: List[int]) -> bool:
+        n=len(nums)
+        s=sum(nums)
+        if s%2:
+            return False
+        if n<2:
+            return False
+        def check(index,cursum):
+            if index>=n:
+                return False
+            if cursum<0:
+                return False
+            if cursum==0:
+                return True
+            if cursum-nums[index]>=0:
+                if check(index+1,cursum-nums[index]):
+                    return True
+            return check(index+1,cursum)
+        
+        return check(0,s//2)
+'''
+
 #attempt2: Reduced from 2^n to 2^(n/2) -> would still give TLE
 '''
 class Solution:

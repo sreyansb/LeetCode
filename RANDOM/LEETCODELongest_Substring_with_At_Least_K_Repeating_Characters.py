@@ -30,6 +30,37 @@ class Solution:
             return maxie
         return recurse(s,k)
                 
+'''
+#took help in clues: Tutorials Point
+class Solution:
+    def longestSubstring(self, s: str, k: int) -> int:
+        def recurse(s):
+            n=len(s)
+            if not(n):
+                return 0
+            if n<k:
+                return 0
+            if k==1:
+                return n
+            buckets={}
+            for i in s:
+                if i not in buckets:
+                    buckets[i]=0
+                buckets[i]+=1
+            badchar=""
+            for i in buckets:
+                if buckets[i]<k:
+                    badchar=i
+                    break
+            if badchar=="":
+                return n
+            strings=s.split(badchar)
+            ans=0
+            for i in strings:
+                ans=max(ans,recurse(i))
+            return ans
+        return recurse(s)
+'''
                     
             
                     

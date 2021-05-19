@@ -1,6 +1,6 @@
 #attempt2: TOOK HELP: IT is about finding the median
 #such problems are usually about finding the median or the mean
-#try either and check
+#try either and check, very important
 class Solution:
     def minMoves2(self, nums: List[int]) -> int:
         nums.sort()

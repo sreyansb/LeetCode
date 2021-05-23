@@ -1,3 +1,29 @@
+#accepted attempt: TOOK HELP JUST COPIED
+class Solution:
+    def CreateConnections(self, A, N):
+        Connections = [[""] * N for _ in range(N)]
+        for i, j in permutations(range(N), 2):
+            Connections[i][j] = A[j]
+            for k in range(min(len(A[i]), len(A[j]))):
+                if A[i][-k:] == A[j][:k]:
+                    Connections[i][j] = A[j][k:]
+        return Connections
+
+    def shortestSuperstring(self, A):
+        N = len(A)
+        Connections = self.CreateConnections(A, N)
+        dp = [[(float("inf"), "")] * N for _ in range(1<<N)]
+        for i in range(N): dp[1<<i][i] = (len(A[i]), A[i])
+            
+        for mask in range(1<<N):
+            n_z_bits = [j for j in range(N) if mask&(1<<j)]
+            
+            for j, k in permutations(n_z_bits, 2):
+                cand = dp[mask ^ (1<<j)][k][1] + Connections[k][j]
+                dp[mask][j] = min(dp[mask][j], (len(cand), cand))
+
+        return min(dp[-1])[1]   
+
 #attempt4: TLE 72/83 DFS with pruning and DP and bit masking
 '''
 class Solution:

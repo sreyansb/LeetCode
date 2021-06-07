@@ -1,4 +1,4 @@
-#attempt3: USED DP: HAVE a visited array for dp or lru_cache
+#attempt3: TOOK HELP USED DP: HAVE a visited array for dp or lru_cache
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         nums=set(nums)

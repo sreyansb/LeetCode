@@ -11,7 +11,7 @@ class Solution:
             maxlefts[i]=max(maxlefts[i-1],height[i])
         ans=0
         for i in range(n):
-            ans+=max(0,min(maxleft[i]-height[i],maxrights[i]-height[i]))
+            ans+=max(0,min(maxlefts[i]-height[i],maxrights[i]-height[i]))
         return ans
 
 #attempt1:

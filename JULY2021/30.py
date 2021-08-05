@@ -1,4 +1,4 @@
-#attempt1:
+w#attempt1:
 # need to store self.keys as: if a key is reinitialized we need to only update the difference
 #if a prefix doesn't appear return a 0
 class MapSum:

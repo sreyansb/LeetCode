@@ -1,4 +1,43 @@
+#attempt2: My Attempt
+class Solution:
+    def spiralOrder(self, matrix):
+        m,n=len(matrix),len(matrix[0])
+        count=0
+        rorc=1
+        rdir=1
+        cdir=1
+        currow=0
+        curcol=0
+        ans=[]
+        while(count<m*n):
+            #print(currow,curcol)
+            if rorc:#1 -> we are filling a row => column has to be filled
+                if (0<=curcol<n) and matrix[currow][curcol]!="*":
+                    ans.append(matrix[currow][curcol])
+                    matrix[currow][curcol]="*"
+                    curcol+=cdir
+                    count+=1
+                else:
+                    cdir*=-1
+                    curcol+=cdir
+                    rorc^=1
+                    currow+=rdir
+                    
+            else:
+                if (0<=currow<m) and matrix[currow][curcol]!="*":
+                    ans.append(matrix[currow][curcol])
+                    matrix[currow][curcol]="*"
+                    currow+=rdir
+                    count+=1
+                else:
+                    rdir*=-1
+                    currow+=rdir
+                    rorc^=1
+                    curcol+=cdir
+        return ans
+                    
 #attempt1:TOOK HELp, no mood to solve
+'''
 class Solution:
     def spiralOrder(self, matrix):
         n, m = len(matrix[0]), len(matrix)
@@ -13,3 +52,4 @@ class Solution:
             x, y = x + dx, y + dy
         
         return ans
+'''

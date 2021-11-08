@@ -1,4 +1,4 @@
-#attempt1: Catalan NUmber
+#attempt1: Catalan Number
 from math import factorial
 class Solution:
     def numTrees(self, n: int) -> int:

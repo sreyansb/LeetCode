@@ -49,7 +49,7 @@ class CombinationIterator:
     
     def __init__(self, characters: str, combinationLength: int):
         self.chararr = sorted(set(characters),reverse=True)
-        self.len = len(self.chararr)
+        self.len = len(self.chararr)#her#e
         self.allowed = []
         self.index = 0
         for i in range(1<<self.len):

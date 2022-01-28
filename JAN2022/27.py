@@ -1,4 +1,6 @@
 #attempt3_my_soln : TOOK HELP
+#in some of attempts leading to this, i was updating di["e"]=i
+#instead of curdi["e"] which didn't help
 class Solution:
     def findMaximumXOR(self, nums: List[int]) -> int:
         di = {}

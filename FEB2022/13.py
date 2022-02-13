@@ -1,4 +1,4 @@
-#attempt1:
+#attempt1:Kya hai bhai
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         final = [[]]

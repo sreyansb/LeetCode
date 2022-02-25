@@ -1,4 +1,4 @@
-#attempt2:
+#attempt2: AC
 class Solution:
     def compareVersion(self, v1: str, v2: str) -> int:
         ans = 0
